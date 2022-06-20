@@ -24,10 +24,11 @@ project "GLFW"
 		"src/null_monitor.c",
 		"src/null_window.c",
 		"src/null_joystick.c",
+        "src/glfw.config.h",
 	}
 
     filter "system:windows"
-        buildoptions {"-std=c11", "-lgdi32" }
+        buildoptions {"-lgdi32" }
         systemversion "latest"
         staticruntime "On"
 
@@ -35,6 +36,7 @@ project "GLFW"
         {
             "src/win32_init.c",
             "src/win32_joystick.c",
+            "src/win32_module.c",
             "src/win32_monitor.c",
             "src/win32_time.c",
             "src/win32_thread.c",
